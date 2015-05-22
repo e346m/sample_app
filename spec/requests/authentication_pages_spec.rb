@@ -74,6 +74,18 @@ describe "Authentication" do
                     it { should have_title('Sign in')} 
                 end
             end
+            describe "visiting the any page" do
+               before{visit root_path}
+              it{should_not have_link('Acount')} 
+            end
+
+            describe "in the Micorposts controller" do
+                
+                describe "submitting to the create action" do
+                    before{post microposts_path}
+                    specify {expect(response).to redirect_to(signin_path)}
+                end
+            end
         end
         describe "as wrong user" do
             let(:user){ FactoryGirl.create(:user)}
