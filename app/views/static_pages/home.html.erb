@@ -8,16 +8,20 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-  </div>
-<%else%>
-  <div class="center hero-unit">
-    <h1>Welcome to Sample App</h1>
-    <h2>
-      this is the home page fore the
-      <a href="http://railstutorial.jp/">Ruby on Rails Tutorial</a>
-      sample application
-    </h2>
-    <%= link_to "Sign up now",signup_path,class:"btn btn-large tn-primary"%>
-  </div>
-  <%= link_to image_tag("rails.png",alt:"Rails"),'http://rubyonrails.org/'%>
-<%end%>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed'%>
+      <div>
+      </div>
+    <%else%>
+      <div class="center hero-unit">
+        <h1>Welcome to Sample App</h1>
+        <h2>
+          this is the home page fore the
+          <a href="http://railstutorial.jp/">Ruby on Rails Tutorial</a>
+          sample application
+        </h2>
+        <%= link_to "Sign up now",signup_path,class:"btn btn-large tn-primary"%>
+      </div>
+      <%= link_to image_tag("rails.png",alt:"Rails"),'http://rubyonrails.org/'%>
+    <%end%>
