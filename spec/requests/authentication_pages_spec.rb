@@ -60,6 +60,16 @@ describe "Authentication" do
 
             describe "in the Users controller" do
 
+              describe "visiting the following page" do
+                before {visit following_user_path(user)}
+                it{should have_title('Sing in')}
+              end
+
+              describe "visiting the follower page" do
+                before{visit followers_user_path(user)}
+                it {should have_title('Sign in')}
+              end
+
                 describe "visiting the edit page" do
                     before { visit edit_user_path(user)}
                     it { should have_title('Sign in')}
