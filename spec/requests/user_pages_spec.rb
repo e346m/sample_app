@@ -79,7 +79,8 @@ describe "UserPages" do
         end
         describe "forbidden attributes" do
             let(:params) do
-                {user: {admin:true, password: user.password, password_confirmation: user.password}}
+                {user: {admin:true, password: user.password, 
+                        password_confirmation: user.password}}
             end
             before do
                 sign_in user,  no_capybara:true

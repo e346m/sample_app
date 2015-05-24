@@ -22,7 +22,6 @@ describe "StaticPages" do
         end
       end
     end
-
   end
   describe "Help page" do
     before{visit help_path}
